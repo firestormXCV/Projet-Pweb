@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{	margin:0;padding:0;
+			box-sizing: border-box;
+			font-family: "Times New Roman", Georgia, Serif;
+			font-size : 12pt;
+}
+
+nav {
+	float:left;
+	width : 20%;
+	border : 1px blue solid;
+}
+
+div#main {
+	width : 50%;
+	text-align : middle;
+}
+
