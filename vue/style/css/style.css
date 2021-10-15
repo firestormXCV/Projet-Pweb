@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{	margin:0;padding:0;
+			box-sizing: border-box;
+			font-family: "Times New Roman", Georgia, Serif;
+			font-size : 12pt;
+}
+
+nav {
+	float:right;
+	width : 100%;
+	background-color: black;
+}
+ul {
+	padding:0;
+	margin:0;
+	list-style-type:none;
+}
+li {
+	margin-left:2px;
+	margin-top: 1px;
+	margin-bottom: 1px;
+	float:right; /*pour IE*/
+}
+ul li a {
+	display:block;
+	float:left;   
+	width:100px;
+	background-color:black;
+	color:white;
+	text-decoration:none;
+	text-align:center;
+	padding:5px;
+	border:2px solid;
+	/*pour avoir un effet "outset" avec IE :*/
+	border-color:#DCDCDC #696969 #696969 #DCDCDC;
+}
+ul li a:hover {
+	background-color:#D3D3D3;
+	color: black;
+} 
+
