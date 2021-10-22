@@ -14,5 +14,5 @@ else { //absence de paramètres : prévoir des valeurs par défaut
 
     require ('./controle/' . $controle . '.php');
     $action (); 
-
+    
 ?>
