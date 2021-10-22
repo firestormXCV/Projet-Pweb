@@ -6,13 +6,14 @@
 	
 	
 	//Verifier si le client existe
-	function verifClient_bd($nom,$num,&$profil) {
+	function verif_ClientBD($nom,$mdp,&$profil) {
 		require('modele/connectBD.php'); //$pdo est défini dans ce fichier
-		$sql="SELECT * FROM `utilisateur` WHERE nom=:nom AND num=:num";
+		$mdp=md5($mdp);
+		$sql="SELECT * FROM `utilisateur` WHERE nom=:nom AND mdp=:mdp";
 		try {
 			$commande = $pdo->prepare($sql);
 			$commande->bindParam(':nom', $nom);
-			$commande->bindParam(':num', $num);
+			$commande->bindParam(':mdp', $mdp);
 			$bool = $commande->execute();
 			if ($bool) {
 				$resultat = $commande->fetchAll(PDO::FETCH_ASSOC); //tableau d'enregistrements
@@ -36,6 +37,7 @@
 			return true;
 		}
 	}
+
 	function inscriptionAbonne($nom, $mdp, $adresseEnt){
 		require('modele/connectBD.php');
 		$md5mdp = md5($mdp);

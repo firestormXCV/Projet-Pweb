@@ -2,7 +2,7 @@
 	// a modifier Pour identifier le client entreprise
 	function identClient () {
         $nom=isset($_POST['nom'])?trim($_POST['nom']):''; // trim pour enlever les espaces avant et apres
-        $num=isset($_POST['num'])?trim($_POST['num']):'';
+        $mdp=isset($_POST['mdp'])?trim($_POST['mdp']):'';
         $msg="";
 
         if (count($_POST)==0) require ("./vue/layout/layout.tpl"); 
@@ -15,15 +15,15 @@
                 
                 //session_start(); //deja fait dans index
                 $_SESSION['profil'] = $profil;
-                $nexturl = "index.php?controle=utilisateur&action=profil";
-                header ("Location:" . $nexturl);
+                //$nexturl = "index.php?controle=utilisateur&action=profil";
+                //header ("Location:" . $nexturl);
             }
             else {
                 $msg = "Utilisateur inconnu !";
-                require("vue/utilisateur/ident.tpl");
+                require("./vue/layout/layout.tpl");
             }
         }
-    }
+	}
 
 
 	
