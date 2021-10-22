@@ -4,7 +4,7 @@
 	$hostname = "localhost";	//ou localhost
 	$base= "econtact";
 	$loginBD= "root";	//ou "root"
-	$passBD="econtrootact";
+	$passBD="root";
 	//$pdo = null;
 
 try {
