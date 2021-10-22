@@ -36,5 +36,20 @@
 			return true;
 		}
 	}
+	function inscriptionAbonne($nom, $mdp, $adresseEnt){
+		require('modele/connectBD.php');
+		$md5mdp = md5($mdp);
 
+		$sql="INSERT INTO client(nom, motDePasse, adresseEntreprise) VALUES (:nom, :md5mdp, :adresseEnt)";
+		try {
+			$commande = $pdo->prepare($sql);
+			$commande->bindParam(':nom', $nom);
+			$commande->bindParam(':md5mdp', $md5mdp);
+			$commande->bindParam(':adresseEnt', $adresseEnt);
+			$bool = $commande->execute();
+		} catch (PDOException $e){
+			echo utf8_encode("Echec insert into : " . $e->getMessage() . "\n") ;
+			die();
+		}
+	}
 ?>

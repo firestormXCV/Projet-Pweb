@@ -40,8 +40,17 @@
 		session_destroy();
 	}
 	
-	function inscrip()  {
-	
+	function inscription($nom, $mdp, $adresseEnt)  {
+		require("./modele/utilisateurBD");
+		if (!identClient($nom, $mdp, $adresseEnt)){
+			$nexturl = "URL de connexion";
+			inscriptionAbonne($nom, $mdp, $adresseEnt);
+			header("Location:" . $nexturl);
+		} else {
+			$msg = "Utilisateur déjà existant";
+			header("Location:" . $nexturl);
+		}
+
 	}
 	function maj_u() {
 		echo ("maj_u ::");

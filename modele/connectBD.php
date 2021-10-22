@@ -2,9 +2,9 @@
 		
 
 	$hostname = "localhost";	//ou localhost
-	$base= "econtact";
+	$base= "gestionvoitures";
 	$loginBD= "root";	//ou "root"
-	$passBD="econtrootact";
+	$passBD="";
 	//$pdo = null;
 
 try {
