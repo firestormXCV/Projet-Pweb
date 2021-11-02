@@ -33,7 +33,7 @@
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
 								<li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
-								<li><a href="#"><i class="fa fa-envelope"></i> info@domain.com</a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i> LocCar@domain.com</a></li>
 							</ul>
 						</div>
 					</div>
@@ -62,7 +62,7 @@
 						<div class="btn-group pull-right clearfix">
 							<div class="btn-group">
 								<button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-									USA
+									FR
 									<span class="caret"></span>
 								</button>
 								<ul class="dropdown-menu">
@@ -73,7 +73,7 @@
 							
 							<div class="btn-group">
 								<button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-									DOLLAR
+									Euro
 									<span class="caret"></span>
 								</button>
 								<ul class="dropdown-menu">
@@ -86,11 +86,11 @@
 					<div class="col-md-8 clearfix">
 						<div class="shop-menu clearfix pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href=""><i class="fa fa-user"></i> Account</a></li>
-								<li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
-								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="./vue/login.tpl"><i class="fa fa-lock"></i> Login</a></li>
+								<li><a href=""><i class="fa fa-user"></i> Compte</a></li>
+								<li><a href=""><i class="fa fa-star"></i> Liste de Souhait</a></li>
+								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Payer</a></li>
+								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Panier</a></li>
+								<li><a href="index.php?controle=utilisateur&action=identClient"><i class="fa fa-lock"></i> Connection </a></li>
 							</ul>
 						</div>
 					</div>
@@ -112,7 +112,7 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="index.html" class="active">Home</a></li>
+								<li><a href="index.html" class="active">Accueil</a></li>
 								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="shop.html">Products</a></li>

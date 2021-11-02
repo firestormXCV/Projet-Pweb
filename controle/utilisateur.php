@@ -5,7 +5,7 @@
         $mdp=isset($_POST['mdp'])?trim($_POST['mdp']):'';
         $msg="";
 
-        if (count($_POST)==0) require ("./vue/layout/layout.tpl"); 
+        if (count($_POST)==0) require ("./vue/login.tpl"); 
         else {
             
             require ("./modele/utilisateurBD.php");
