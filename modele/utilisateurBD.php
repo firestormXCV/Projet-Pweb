@@ -6,13 +6,13 @@
 	
 	
 	//Verifier si le client existe
-	function verif_ClientBD($nom,$mdp,&$profil) {
+	function verif_ClientBD($email,$mdp,&$profil) {
 		require('modele/connectBD.php'); //$pdo est défini dans ce fichier
 		$mdp=md5($mdp);
-		$sql="SELECT * FROM `utilisateur` WHERE nom=:nom AND mdp=:mdp";
+		$sql="SELECT * FROM `utilisateur` WHERE email=:email AND mdp=:mdp";
 		try {
 			$commande = $pdo->prepare($sql);
-			$commande->bindParam(':nom', $nom);
+			$commande->bindParam(':email', $email);
 			$commande->bindParam(':mdp', $mdp);
 			$bool = $commande->execute();
 			if ($bool) {

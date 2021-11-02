@@ -42,7 +42,7 @@
 	
 	function inscription($nom, $mdp, $adresseEnt)  {
 		require("./modele/utilisateurBD");
-		if (!identClient($nom, $mdp, $adresseEnt)){
+		if (!verif_ClientBD($adresseEnt,$mdp,$profil)){
 			$nexturl = "URL de connexion";
 			inscriptionAbonne($nom, $mdp, $adresseEnt);
 			header("Location:" . $nexturl);
