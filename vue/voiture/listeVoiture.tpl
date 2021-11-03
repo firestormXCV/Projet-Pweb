@@ -87,8 +87,6 @@
 						<div class="shop-menu clearfix pull-right">
 							<ul class="nav navbar-nav">
 								<li><a href=""><i class="fa fa-user"></i> Compte</a></li>
-								<li><a href=""><i class="fa fa-star"></i> Liste de Souhait</a></li>
-								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Payer</a></li>
 								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Panier</a></li>
 								<li><a href="index.php?controle=utilisateur&action=identClient"><i class="fa fa-lock"></i> Connection </a></li>
 							</ul>
@@ -268,10 +266,7 @@
 									</div>
 								</div>";
 							$list[] = $car[3];
-							unset($car);
-
-							
-							
+							unset($car);							
 						}
 							
 						?>				
