@@ -4,7 +4,7 @@
 	$hostname = "localhost";	//ou localhost
 	$base= "gestionvoitures";
 	$loginBD= "root";	//ou "root"
-	$passBD="root";
+	$passBD="";
 	//$pdo = null;
 
 try {

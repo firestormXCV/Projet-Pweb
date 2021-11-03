@@ -254,6 +254,7 @@
 													<h2>" . $car[3] . "</h2>
 													<p>" . $car[4] . "€ /s</p>
 													<a href=\"#\" class=\"btn btn-default add-to-cart\"><i class=\"fa fa-shopping-cart\"></i>Louer</a>
+													<a href=\"#\" class=\"btn btn-default add-to-cart\"></i>Info</a>
 												</div>
 												<div class=\"product-overlay\">
 													<div class=\"overlay-content\">
