@@ -3,7 +3,7 @@
 
     function afficheVoiture(&$voitures){
         require('./modele/connectBD.php');
-        $sql="SELECT * FROM voiture";
+        $sql="SELECT * FROM voiture WHERE etat=\"disponible\"";
         try{
             $commande = $pdo->prepare($sql);
 			$bool = $commande->execute();

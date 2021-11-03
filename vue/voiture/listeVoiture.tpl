@@ -359,12 +359,17 @@
 
 						<?php
 						$_SESSION['voitures']=$voitures;
+
 						$list[] = "aaaa";
+						$i = 0;
+
 						foreach($voitures as $voiture) {
 							$car;
+							
 							foreach($voiture as $v) {
-								$car[] = $v;
+								$car[] = $v;								
 							}
+							
 							
 							if (count($list) != 0) {
 								if (in_array($car[3], $list)) {
@@ -394,9 +399,11 @@
 								</div>";
 							$list[] = $car[3];
 							unset($car);
+
+							
 							
 						}
-				
+							
 						?>
 						
 					</div><!--features_items-->

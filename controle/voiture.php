@@ -9,6 +9,8 @@ function listeVoiture() {
 	require ("./modele/voitureBD.php");
 	if(afficheVoiture($voitures)){
 		$_SESSION['voitures']=$voitures;
+		
+		
 	}
 	else{
 		$msg='Pas de voitures !';
