@@ -1,6 +1,6 @@
 <?php
 
-    function IsClient($nomClient, $emailClient){
+    function IsClient($nomClient, $emailClient, &$profil){
         require("./modele/connectBD.php");
         $sql="SELECT * FROM utilisateur WHERE nom=:nom email=:email";
         try{
@@ -17,11 +17,11 @@
 			die(); // On arrête tout.
 		}
 		if (count($resultat) == 0) {
-			$profil=array(); // Pour qu'il y ait quand même quelque chose...
+			//$profil=array(); // Pour qu'il y ait quand même quelque chose...
 			return false; 
 		}
 		else {
-			$profil = $resultat[0];
+			//$profil = $resultat[0];
 			//var_dump($profil);
 			return true;
 		}

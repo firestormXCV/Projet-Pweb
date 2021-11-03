@@ -25,7 +25,7 @@
 </head><!--/head-->
 
 <body>
-		<header id="header"><!--header-->
+	<header id="header"><!--header-->
 		<div class="header_top"><!--header_top-->
 			<div class="container">
 				<div class="row">
@@ -87,8 +87,6 @@
 						<div class="shop-menu clearfix pull-right">
 							<ul class="nav navbar-nav">
 								<li><a href=""><i class="fa fa-user"></i> Compte</a></li>
-								<li><a href=""><i class="fa fa-star"></i> Liste de Souhait</a></li>
-								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Payer</a></li>
 								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Panier</a></li>
 								<li><a href="index.php?controle=utilisateur&action=identClient"><i class="fa fa-lock"></i> Connection </a></li>
 							</ul>
@@ -149,15 +147,19 @@
 				<div class="col-sm-4 col-sm-offset-1">
 					<div class="login-form"><!--login form-->
 						<h2>Login to your account</h2>
-						<form action="#">
+
+
+						<form action="index.php?controle=eee&action=aaa" method="post">
 							<input type="text" placeholder="Name" />
 							<input type="email" placeholder="Email Address" />
 							<span>
 								<input type="checkbox" class="checkbox"> 
 								Keep me signed in
 							</span>
-							<button type="submit" class="btn btn-default">Login</button>
+							<button type="submit" class="btn btn-default">Connexion</button>
 						</form>
+
+
 					</div><!--/login form-->
 				</div>
 				<div class="col-sm-1">
@@ -166,12 +168,17 @@
 				<div class="col-sm-4">
 					<div class="signup-form"><!--sign up form-->
 						<h2>New User Signup!</h2>
-						<form action="#">
-							<input type="text" placeholder="Name"/>
-							<input type="email" placeholder="Email Address"/>
-							<input type="password" placeholder="Password"/>
-							<button type="submit" class="btn btn-default">Signup</button>
+
+
+						<form action="index.php?controle=inscriptionClient?action=inscriptionP" method="post">
+							<input type="text" values="<?php echo $nom; ?>" name="nom"/>
+							<input type="email" values="<?php echo $email; ?>" name="email"/>
+							<input type="password" values="<?php echo $mdp; ?>" name="mdp"/>
+							<button type="submit" class="btn btn-default">S'Inscrire</button>
 						</form>
+
+						<div> <?php $sql="SELECT * FROM utilisateur"; sql->execute();?> </div>
+
 					</div><!--/sign up form-->
 				</div>
 			</div>

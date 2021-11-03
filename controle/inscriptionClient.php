@@ -1,16 +1,35 @@
 <?php
-function inscription(){
-
-    require("./modele/inscriptionClient.php");
+function ident(){
+    
+    $nom=isset($_POST['nom'])?trim($_POST['nom']):''; // trim pour enlever les espaces avant et apres
+	$email=isset($_POST['email'])?trim($_POST['email']):'';
+    $mdp=isset($_POST['mdp'])?trim($_POST['mdp']):'';
     $msg="";
-    if (!isset($_GET['nom']) && !isset($_GET['email']) && !isset($_GET['mdp'])){
-        $msg = "Veuillez remplir tous les champs";
-    } else {
-        $bool = IsClient($_GET['nom'], $_GET['email']);
-        if ($bool == false){
-            inscriptionClient($_GET['nom'], $_GET['mdp'], $_GET['email']);
-        } else {
+    if (count($_POST)==0) {
+
+        require ("./vue/login.tpl");               
+    }
+    
+}
+
+
+function inscriptionP() {
+    
+    $nom=isset($_POST['nom'])?trim($_POST['nom']):''; // trim pour enlever les espaces avant et apres
+	$email=isset($_POST['email'])?trim($_POST['email']):'';
+    $mdp=isset($_POST['mdp'])?trim($_POST['mdp']):'';
+    $msg="";
+    die();
+
+    if(count($_POST) != 0) {
+
+        die();
+            require('./modele/inscriptionClientDB.php');
+            
+         if (IsClient($nom, $email)) {
             $msg = "Ce client existe déjà";
+         }else {
+                inscription($nom, $mdp, $email);
         }
     }
 }
