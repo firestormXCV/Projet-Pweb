@@ -19,12 +19,23 @@
                 header ("Location:" . $nexturl);
             }
             else {
-                $msg = "Utilisateur inconnu !";
+                $msgLog = "Utilisateur inconnu !";
            		require("./vue/layout/layout.tpl");
             }
         }
 	}
-	
+	function inscription()  { //$nom, $mdp, $adresseEnt
+		require("./modele/utilisateurBD");
+		if (!verif_LoginBD($email,$mdp,$profil)){
+			$nexturl = "URL de connexion";
+			inscriptionAbonne($nom, $mdp, $email);
+			header("Location:" . $nexturl);
+		} else {
+			$msgSign = "Utilisateur déjà existant";
+			header("Location:" . $nexturl);
+		}
+
+	}	
 	function compteClient() {
 
 
@@ -41,17 +52,6 @@
 		header("Location: index.php");
 	}	
 	
-	function inscription($nom, $mdp, $adresseEnt)  {
-		require("./modele/utilisateurBD");
-		if (!verif_ClientBD($adresseEnt,$mdp,$profil)){
-			$nexturl = "URL de connexion";
-			inscriptionAbonne($nom, $mdp, $adresseEnt);
-			header("Location:" . $nexturl);
-		} else {
-			$msg = "Utilisateur déjà existant";
-			header("Location:" . $nexturl);
-		}
 
-	}
 			
 ?>

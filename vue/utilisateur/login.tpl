@@ -16,7 +16,7 @@
 							</span>
 							<button type="submit" class="btn btn-default">Login</button>
 						</form>
-
+						<div id ="msgLog"> <?php $msg=isset($msgLog)?trim($msgLog):''; echo $msg; ?> </div>
 
 					</div><!--/login form-->
 				</div>
@@ -29,12 +29,12 @@
 
 
 						<form action="index.php?controle=inscriptionClient?action=inscriptionP" method="post">
-							<input type="text" values="<?php echo $nom; ?>" name="nom"/>
-							<input type="email" values="<?php echo $email; ?>" name="email"/>
-							<input type="password" values="<?php echo $mdp; ?>" name="mdp"/>
+							<input type="text" name="nom" placeholder="Nom"/>
+							<input type="email" name="email" placeholder="Email"/>
+							<input type="password" name="mdp" placeholder="Mot De Passe"/>
 							<button type="submit" class="btn btn-default">S'Inscrire</button>
 						</form>
-
+						<div id ="msgSign"> <?php $msg=isset($msgSign)?trim($msgSign):''; echo $msg; ?> </div>
 					</div><!--/sign up form-->
 				</div>
 			</div>

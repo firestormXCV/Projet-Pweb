@@ -19,6 +19,19 @@ function listeVoiture() {
 	require ("./vue/layout/layout.tpl"); //layout lançant le template de vue du service
 }
 
+function listVoitureClient() {
+
+	require ("./modele/voitureBD.php");
+	if(afficheVoitureClient($voitures)){
+		$_SESSION['voitures']=$voitures;
+	}else{
+		$msg='Pas de voitures !';
+	}
+
+
+	require ("./vue/maFlotteClient.tpl");
+}
+
 
 
 ?>

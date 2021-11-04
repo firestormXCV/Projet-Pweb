@@ -92,6 +92,20 @@
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><a href="index.html" class="active">Accueil</a></li>
+
+								<?php 
+									if(empty($_SESSION['profil'])){
+										if ($_SESSION['profil']['role']='CLIENT') {
+											echo '<li><a href="index.php?controle=aa&action=aaa" class="active">Ma flotte</a></li>';
+										} else {
+											echo '<li><a href="index.php?controle=aa&action=aaa" class="active">Ma flotte</a></li>';
+										}
+									}
+									
+									
+										
+								?>
+
 								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="shop.html">Products</a></li>
