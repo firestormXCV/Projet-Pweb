@@ -38,7 +38,7 @@
 		$sql="SELECT * FROM voiture WHERE etat=:etat";
 		try{
             $commande = $pdo->prepare($sql);
-			$commande->bindParam(':etat', $_SESSION['profil']['id']);
+			$commande->bindParam(':etat', $_SESSION['profil'][0]['id']);
 			$bool = $commande->execute();
 			if ($bool) {
 				$resultat = $commande->fetchAll(PDO::FETCH_ASSOC); //tableau d'enregistrements
@@ -96,7 +96,7 @@
 
 		}
 
-		$sql="SELECT * FROM voiture WHERE etat!=\"disponible\" AND etat!=\"revision\"";
+		$sql="SELECT * FROM voiture WHERE etat <> \"disponible\" AND etat <> \"enRevision\"";
 		try{
             $commande = $pdo->prepare($sql);
 			$bool = $commande->execute();
@@ -124,7 +124,7 @@
 
 		}
 
-		$sql="SELECT * FROM voiture WHERE etat=\"revision\"";
+		$sql="SELECT * FROM voiture WHERE etat=\"enRevision\"";
 		try{
             $commande = $pdo->prepare($sql);
 			$bool = $commande->execute();

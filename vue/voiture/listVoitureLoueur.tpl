@@ -13,23 +13,13 @@
 						<?php
 						$_SESSION['voituresDispo']=$voituresDispo;
 
-						$list[] = "aaaa";
-						$i = 0;
-
 						foreach($voituresDispo as $voitureDispo) {
 							$car;
 							
-							foreach($voitureDiscpo as $v) {
+							foreach($voitureDispo as $v) {
 								$car[] = $v;								
 							}
 							
-							
-							if (count($list) != 0) {
-								if (in_array($car[3], $list)) {
-    								continue;
-								}
-							}
-
 							echo "
 								<div class=\"col-sm-4\">
 									<div class=\"product-image-wrapper\">
@@ -51,7 +41,7 @@
 										</div>
 									</div>
 								</div>";
-							$list[] = $car[3];
+							
 							unset($car);							
 						}
 							
@@ -65,21 +55,11 @@
 						<?php
 						$_SESSION['voituresLouees']=$voituresLouees;
 
-						$list[] = "aaaa";
-						$i = 0;
-
 						foreach($voituresLouees as $voitureLouees) {
 							$car;
 							
-							foreach($voitureLoues as $v) {
+							foreach($voitureLouees as $v) {
 								$car[] = $v;								
-							}
-							
-							
-							if (count($list) != 0) {
-								if (in_array($car[3], $list)) {
-    								continue;
-								}
 							}
 
 							echo "
@@ -103,7 +83,6 @@
 										</div>
 									</div>
 								</div>";
-							$list[] = $car[3];
 							unset($car);							
 						}
 							
@@ -117,21 +96,11 @@
 						<?php
 						$_SESSION['voituresRevision']=$voituresRevision;
 
-						$list[] = "aaaa";
-						$i = 0;
-
 						foreach($voituresRevision as $voitureRevision) {
 							$car;
 							
 							foreach($voitureRevision as $v) {
 								$car[] = $v;								
-							}
-							
-							
-							if (count($list) != 0) {
-								if (in_array($car[3], $list)) {
-    								continue;
-								}
 							}
 
 							echo "
@@ -155,7 +124,6 @@
 										</div>
 									</div>
 								</div>";
-							$list[] = $car[3];
 							unset($car);							
 						}
 							
