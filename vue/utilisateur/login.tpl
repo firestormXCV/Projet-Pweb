@@ -35,8 +35,6 @@
 							<button type="submit" class="btn btn-default">S'Inscrire</button>
 						</form>
 
-						<div> <?php $sql="SELECT * FROM utilisateur"; sql->execute();?> </div>
-
 					</div><!--/sign up form-->
 				</div>
 			</div>
