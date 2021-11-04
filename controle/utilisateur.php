@@ -1,44 +1,45 @@
 ﻿<?php 
 	// a modifier Pour identifier le client entreprise
-	function identClient () {
-        $nom=isset($_POST['nom'])?trim($_POST['nom']):''; // trim pour enlever les espaces avant et apres
+	function login() {
+        $email=isset($_POST['email'])?trim($_POST['email']):''; // trim pour enlever les espaces avant et apres
         $mdp=isset($_POST['mdp'])?trim($_POST['mdp']):'';
         $msg="";
-
-        if (count($_POST)==0) require ("./vue/login.tpl"); 
+        if (count($_POST)==0) require ("./vue/layout/layout.tpl"); 
         else {
             
             require ("./modele/utilisateurBD.php");
             
-            if (verif_bd($nom, $num, $profil)) {
+            if (verif_LoginBD($email, $mdp, $profil)) {
                 //echo ('<br/>PROFIL : <pre>'); var_dump ($profil); echo ('</pre><br/>'); die("ident");
                 
                 //session_start(); //deja fait dans index
                 $_SESSION['profil'] = $profil;
-                //$nexturl = "index.php?controle=utilisateur&action=profil";
-                //header ("Location:" . $nexturl);
+				//en fonction du role envoyer une page compte client ou loueur
+                $nexturl = "index.php?controle=utilisateur&action=compteClient";
+                header ("Location:" . $nexturl);
             }
             else {
                 $msg = "Utilisateur inconnu !";
-                require("./vue/layout/layout.tpl");
+           		require("./vue/layout/layout.tpl");
             }
         }
 	}
-
-
 	
-	function accueil() {
-		require ("modele/contactBD.php");
-		$idn = $_SESSION['profil']['id_nom'];
-		$Contact = contacts($idn);
-		require ("vue/utilisateur/accueil.tpl");
+	function compteClient() {
+
+
+
+		require("./vue/layout/layout.tpl");
+	}
+	
+	function compteLoueur(){
+		
 	}
 	
 	function bye() {
-		echo ("<h2>Au revoir M. ou Mdme " . $_SESSION['profil']['nom'] . "</h2>");
-		echo ("<li><a href='index.php'>Reconnexion</a></li>");
 		session_destroy();
-	}
+		header("Location: index.php");
+	}	
 	
 	function inscription($nom, $mdp, $adresseEnt)  {
 		require("./modele/utilisateurBD");
@@ -52,10 +53,5 @@
 		}
 
 	}
-	function maj_u() {
-		echo ("maj_u ::");
-	}
-	function destr_u ()  {
-		echo ("destr_u ::");
-	}				
+			
 ?>
