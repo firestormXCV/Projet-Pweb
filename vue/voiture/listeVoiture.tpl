@@ -88,7 +88,7 @@
 							<ul class="nav navbar-nav">
 								<li><a href=""><i class="fa fa-user"></i> Compte</a></li>
 								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Panier</a></li>
-								<li><a href="index.php?controle=utilisateur&action=identClient"><i class="fa fa-lock"></i> Connection </a></li>
+								<li><a href="index.php?controle=inscriptionClient&action=ident"><i class="fa fa-lock"></i> Connection </a></li>
 							</ul>
 						</div>
 					</div>
