@@ -93,28 +93,20 @@
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><a href="index.html" class="active">Accueil</a></li>
 
-								<?php 
-									if(empty($_SESSION['profil'])){
-										if ($_SESSION['profil']['role']='CLIENT') {
-											echo '<li><a href="index.php?controle=aa&action=aaa" class="active">Ma flotte</a></li>';
+								<?php
+								
+									$prof = $_SESSION['profil'][0];
+									if(!empty($_SESSION['profil'])){
+										  var_dump($prof['role']); die();
+										if (strcmp($prof['role'],'CLIENT') == 0) {
+											echo '<li><a href="index.php?controle=voiture&action=listVoitureClient" class="active">Ma flotte ' . $_SESSION["profil"]["role"] . '</a></li>';
 										} else {
-											echo '<li><a href="index.php?controle=aa&action=aaa" class="active">Ma flotte</a></li>';
+											echo '<li><a href="index.php?controle=voiture&action=listVoitureLoueur" class="active">Ma flotte ' . $_SESSION["profil"]["role"] . '</a></li>';
 										}
 									}
-									
-									
-										
 								?>
 
-								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.html">Products</a></li>
-										<li><a href="product-details.html">Product Details</a></li> 
-										<li><a href="checkout.html">Checkout</a></li> 
-										<li><a href="cart.html">Cart</a></li> 
-										<li><a href="login.html">Login</a></li> 
-                                    </ul>
-                                </li> 
+								
 								<li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="blog.html">Blog List</a></li>

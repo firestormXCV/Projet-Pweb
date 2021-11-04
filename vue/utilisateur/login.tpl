@@ -8,8 +8,8 @@
 
 
 						<form action="index.php?controle=utilisateur&action=login" method="post">
-							<input type="email" placeholder="Email Address" name="email"/> <!--name pour le php, recup avec $_post-->
-							<input type="password" placeholder="Mot de passe" name="mdp"/>
+							<input type="email" placeholder="Email Address" name="email" value="Isaac@gmail.com"/> <!--name pour le php, recup avec $_post-->
+							<input type="password" placeholder="Mot de passe" name="mdp" value="MD5"/>
 							<span>
 								<input type="checkbox" class="checkbox"> 
 								Keep me signed in
@@ -28,10 +28,10 @@
 						<h2>New User Signup!</h2>
 
 
-						<form action="index.php?controle=inscriptionClient?action=inscriptionP" method="post">
-							<input type="text" name="nom" placeholder="Nom"/>
-							<input type="email" name="email" placeholder="Email"/>
-							<input type="password" name="mdp" placeholder="Mot De Passe"/>
+						<form action="index.php?controle=utilisateur&action=inscription" method="post">
+							<input type="text" name="nomIns" placeholder="Nom" value="NomDeTest"/>
+							<input type="email" name="emailIns" placeholder="Email" value="EmailDeTest@gmail.com"/>
+							<input type="password" name="mdpIns" placeholder="Mot de passe" value="Ok"/>
 							<button type="submit" class="btn btn-default">S'Inscrire</button>
 						</form>
 						<div id ="msgSign"> <?php $msg=isset($msgSign)?trim($msgSign):''; echo $msg; ?> </div>

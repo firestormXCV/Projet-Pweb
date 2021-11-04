@@ -27,9 +27,21 @@ function listVoitureClient() {
 	}else{
 		$msg='Pas de voitures !';
 	}
+	require ("./vue/layout/layout.tpl");
+}
 
+function listVoitureLoueur() {
 
-	require ("./vue/maFlotteClient.tpl");
+	require ("./modele/voitureBD.php");
+	if(afficheVoitureLoueur($voituresDispo, $voituresLouees, $voituresRevision)){
+		$_SESSION['voituresDispo']=$voituresDispo;
+		$_SESSION['voituresLouees']=$voituresLouees;
+		$_SESSION['voituresRevision']=$voituresRevision;
+
+	}else{
+		$msg='Pas de voitures !';
+	}
+	require ("./vue/layout/layout.tpl");
 }
 
 

@@ -13,7 +13,7 @@ function ident(){
 }
 
 
-function inscriptionP() {
+function inscription() {
     
     $nom=isset($_POST['nom'])?trim($_POST['nom']):''; // trim pour enlever les espaces avant et apres
 	$email=isset($_POST['email'])?trim($_POST['email']):'';

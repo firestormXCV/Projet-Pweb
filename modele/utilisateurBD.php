@@ -17,7 +17,7 @@
 			$bool = $commande->execute();
 			if ($bool) {
 				$resultat = $commande->fetchAll(PDO::FETCH_ASSOC); //tableau d'enregistrements
-				// var_dump($resultat); die();
+				
 				/*while ($ligne = $commande->fetch()) { // ligne par ligne
 					print_r($ligne);
 				}*/
@@ -32,21 +32,22 @@
 			return false; 
 		}
 		else {
-			$profil = $resultat[0];
+			$profil = $resultat;;
 			//var_dump($profil); die();
 			return true;
 		}
 	}
-	function inscriptionAbonne($nom, $mdp, $adresseEnt){
+	function inscriptionAbonne($nom, $mdp, $email){
 		require('modele/connectBD.php');
+		//var_dump($mdp);die();
 		$md5mdp = md5($mdp);
 
-		$sql="INSERT INTO client(nom, motDePasse, adresseEntreprise) VALUES (:nom, :md5mdp, :adresseEnt)";
+		$sql="INSERT INTO utilisateur(nom, mdp, email) VALUES (:nom, :md5mdp, :email)";
 		try {
 			$commande = $pdo->prepare($sql);
 			$commande->bindParam(':nom', $nom);
 			$commande->bindParam(':md5mdp', $md5mdp);
-			$commande->bindParam(':adresseEnt', $adresseEnt);
+			$commande->bindParam(':email', $email);
 			$bool = $commande->execute();
 		} catch (PDOException $e){
 			echo utf8_encode("Echec insert into : " . $e->getMessage() . "\n") ;
