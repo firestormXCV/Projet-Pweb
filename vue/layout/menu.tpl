@@ -95,13 +95,15 @@
 
 								<?php
 								
-									$prof = $_SESSION['profil'][0];
+									
 									if(!empty($_SESSION['profil'])){
-										  var_dump($prof['role']); die();
-										if (strcmp($prof['role'],'CLIENT') == 0) {
-											echo '<li><a href="index.php?controle=voiture&action=listVoitureClient" class="active">Ma flotte ' . $_SESSION["profil"]["role"] . '</a></li>';
+										$prof = $_SESSION['profil'];
+										$rolee = $prof[0]['role'];
+										  
+										if (strcmp($rolee,'CLIENT') == 0) {
+											echo '<li><a href="index.php?controle=voiture&action=listVoitureClient" class="active">Ma flotte ' . $rolee . '</a></li>';
 										} else {
-											echo '<li><a href="index.php?controle=voiture&action=listVoitureLoueur" class="active">Ma flotte ' . $_SESSION["profil"]["role"] . '</a></li>';
+											echo '<li><a href="index.php?controle=voiture&action=listVoitureLoueur" class="active">Ma flotte ' . $rolee . '</a></li>';
 										}
 									}
 								?>
