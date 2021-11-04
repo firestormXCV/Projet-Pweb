@@ -1,10 +1,9 @@
 	<h1 style="padding-bottom:5%"> Bienvenue 
 		<?php 
-			$nom=$_SESSION['nom'];
+			$prof=$_SESSION['profil'][0];
+			$nom = $prof['nom'];
 			echo $nom;
-			$role=$_SESSION['role'];
-			echo $role; 
-
+			
 	
 		?>
 	</h1>
