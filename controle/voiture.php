@@ -45,5 +45,13 @@ function listVoitureLoueur() {
 }
 
 
+function ajouterVoiture() {
+	
+	$nextUrl="index.php?controle=voiture&action=listVoitureLoueur";
+	header("Location:" . $nextUrl);
+}
+
+
+
 
 ?>
