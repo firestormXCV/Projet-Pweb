@@ -59,7 +59,13 @@
 					<div class="col-md-8 clearfix">
 						<div class="shop-menu clearfix pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href=""><i class="fa fa-user"></i> Compte</a></li>
+								<?php 
+									if(!empty($_SESSION['profil'])){
+										$profil = $_SESSION['profil'];
+										$nom = $profil[0]['nom'];
+										echo '<li><a href=""><i class="fa fa-user"></i>'.$nom.'</a></li>';
+									}
+								?>
 								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Panier</a></li>
 								<!--Ajouter un truc pour que ca affiche deconnexion si connecté sinon connexion !!!!!!!!!!!!!!   -->
 								<?php 
