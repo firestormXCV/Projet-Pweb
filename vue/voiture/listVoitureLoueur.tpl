@@ -45,7 +45,8 @@
 							unset($car);							
 						}
 							
-						?>				
+						?>
+								
 				</div>
 
 				<div class="col-sm-9 padding-right">
@@ -86,7 +87,8 @@
 							unset($car);							
 						}
 							
-						?>				
+						?>
+					</div>			
 				</div>
 
 				<div class="col-sm-9 padding-right">
@@ -127,7 +129,8 @@
 							unset($car);							
 						}
 							
-						?>				
+						?>
+					</div>		
 				</div>
 			</div>
 		</div>

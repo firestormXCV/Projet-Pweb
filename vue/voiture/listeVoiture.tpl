@@ -73,7 +73,7 @@
 				</div>
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
-						<h2 class="title text-center">Features Items</h2>
+						<h2 class="title text-center">Nos Véhicules</h2>
 
 						<?php
 						$_SESSION['voitures']=$voitures;
@@ -103,14 +103,14 @@
 													<img src=\"vue/img/" . $car[2] . "\" alt=\"car-pic\" />
 													<h2>" . $car[3] . "</h2>
 													<p>" . $car[4] . "€ /s</p>
-													<a href=\"#\" class=\"btn btn-default add-to-cart\"><i class=\"fa fa-shopping-cart\"></i>Louer</a>
+													<a href=\"index.php?controle=produit&action=afficheProduit&id=$car[0]\" class=\"btn btn-default add-to-cart\"><i class=\"fa fa-shopping-cart\"></i>Louer</a>
 													<a href=\"#\" class=\"btn btn-default add-to-cart\"></i>Info</a>
 												</div>
 												<div class=\"product-overlay\">
 													<div class=\"overlay-content\">
 														<h2>$car[3]</h2>
 														<p>$car[4]€ /s</p>
-														<a href=\"#\" class=\"btn btn-default add-to-cart\"><i class=\"fa fa-shopping-cart\"></i>Louer</a>
+														<a href=\"index.php?controle=produit&action=afficheProduit&id=$car[0]\" class=\"btn btn-default add-to-cart\"><i class=\"fa fa-shopping-cart\"></i>Louer</a>
 													</div>
 												</div>
 										</div>

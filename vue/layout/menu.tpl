@@ -91,7 +91,7 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="index.html" class="active">Accueil</a></li>
+								<li><a href="index.php?controle=voiture&action=listeVoiture" class="active">Accueil</a></li>
 
 								<?php
 								
