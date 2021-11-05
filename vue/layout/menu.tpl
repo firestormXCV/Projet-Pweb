@@ -30,7 +30,7 @@
 				<div class="row">
 					<div class="col-md-4 clearfix">
 						<div class="logo pull-left">
-							<a href="index.html"><img src="vue/images/home/logo.png" alt="" /></a>
+							<a href="index.php?controle=voiture&action=listeVoiture"><img src="vue/images/home/logo.png" alt="" /></a>
 						</div>
 						<div class="btn-group pull-right clearfix">
 							<div class="btn-group">
