@@ -30,7 +30,7 @@
 				<div class="row">
 					<div class="col-md-4 clearfix">
 						<div class="logo pull-left">
-							<a href="index.html"><img src="vue/images/home/logo.png" alt="" /></a>
+							<a href="index.php?controle=voiture&action=listeVoiture"><img src="vue/images/home/logo.png" alt="" /></a>
 						</div>
 						<div class="btn-group pull-right clearfix">
 							<div class="btn-group">
@@ -59,7 +59,13 @@
 					<div class="col-md-8 clearfix">
 						<div class="shop-menu clearfix pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href=""><i class="fa fa-user"></i> Compte</a></li>
+								<?php 
+									if(!empty($_SESSION['profil'])){
+										$profil = $_SESSION['profil'];
+										$nom = $profil[0]['nom'];
+										echo '<li><a href=""><i class="fa fa-user"></i>'.$nom.'</a></li>';
+									}
+								?>
 								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Panier</a></li>
 								<!--Ajouter un truc pour que ca affiche deconnexion si connecté sinon connexion !!!!!!!!!!!!!!   -->
 								<?php 
