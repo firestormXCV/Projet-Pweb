@@ -63,7 +63,7 @@ function ajouterVoiture() {
 		ajoutVoiture($fileName, $modele, $prix);
 		$nv_chemin = "./vue/img";
 		move_uploaded_file($fileTmpName, "$nv_chemin/$fileName");
-		$msg="Le véhicule " . $modele . " a été ajouté au prix de " . $prix . " par jour.\n";
+		$msg="Le véhicule " . $modele . " a été ajouté au prix de " . $prix . "€ par jour.\n";
 		$_SESSION['msgErr']=$msg;
 	} else {
 		$msg = "Veuillez remplir tous les champs";

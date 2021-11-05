@@ -1,4 +1,3 @@
-
 	<section>
 		<div class="container">
 			<div class="row">
@@ -14,7 +13,14 @@
 						<input type="number" placeholder="Prix" name="prixAjout"/>
 						<button type="submit" class="btn btn-default">Ajouter</button>
 					</form>
-					<div id ="msgErr"> <?php echo $_SESSION['msgErr']; ?> </div>
+					<div id ="msgErr">
+						<?php
+							if(!isset($_SESSION['msgErr'])){
+								$_SESSION['msgErr'] = '';
+							} else {
+								echo $_SESSION['msgErr'];
+							}
+						?> </div>
 				</div>
 				
 				<div class="col-sm-9 padding-right">
@@ -41,14 +47,15 @@
 													<p>" . $car[4] . "€ /s</p>
 													<a href=\"#\" class=\"btn btn-default add-to-cart\"><i class=\"fa fa-shopping-cart\"></i>Louer</a>
 													<a href=\"#\" class=\"btn btn-default add-to-cart\"></i>Info</a>
+													<a href=\"#\" class=\"btn btn-default add-to-cart\"></i>Supprimer</a>
 												</div>
-												<div class=\"product-overlay\">
+												<!--<div class=\"product-overlay\">
 													<div class=\"overlay-content\">
 														<h2>$car[3]</h2>
 														<p>$car[4]€ /s</p>
 														<a href=\"#\" class=\"btn btn-default add-to-cart\"><i class=\"fa fa-shopping-cart\"></i>Louer</a>
 													</div>
-												</div>
+												</div>-->
 										</div>
 									</div>
 								</div>";
@@ -83,6 +90,7 @@
 													<p>" . $car[4] . "€ /s</p>
 													<a href=\"#\" class=\"btn btn-default add-to-cart\"><i class=\"fa fa-shopping-cart\"></i>Louer</a>
 													<a href=\"#\" class=\"btn btn-default add-to-cart\"></i>Info</a>
+													<a href=\"#\" class=\"btn btn-default add-to-cart\"></i>Supprimer</a>
 												</div>
 												<div class=\"product-overlay\">
 													<div class=\"overlay-content\">
@@ -124,6 +132,7 @@
 													<p>" . $car[4] . "€ /s</p>
 													<a href=\"#\" class=\"btn btn-default add-to-cart\"><i class=\"fa fa-shopping-cart\"></i>Louer</a>
 													<a href=\"#\" class=\"btn btn-default add-to-cart\"></i>Info</a>
+													<a href=\"#\" class=\"btn btn-default add-to-cart\"></i>Supprimer</a>
 												</div>
 												<div class=\"product-overlay\">
 													<div class=\"overlay-content\">
