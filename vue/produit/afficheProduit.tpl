@@ -34,76 +34,65 @@
 					</div>
 				</div>
 				
-				<div class="col-sm-9 padding-right">
-					<div class="product-details"><!--product-details-->
-						<div class="col-sm-5">
-							<div class="view-product">
-								<img src="images/product-details/1.jpg" alt="" />
-							</div>
-							<div id="similar-product" class="carousel slide" data-ride="carousel">
-								
-								  <!-- Wrapper for slides -->
-								    <div class="carousel-inner">
-										<div class="item active">
-										  <a href=""><img src="images/product-details/similar1.jpg" alt=""></a>
-										  <a href=""><img src="images/product-details/similar2.jpg" alt=""></a>
-										  <a href=""><img src="images/product-details/similar3.jpg" alt=""></a>
-										</div>
-										<div class="item">
-										  <a href=""><img src="images/product-details/similar1.jpg" alt=""></a>
-										  <a href=""><img src="images/product-details/similar2.jpg" alt=""></a>
-										  <a href=""><img src="images/product-details/similar3.jpg" alt=""></a>
-										</div>
-										<div class="item">
-										  <a href=""><img src="images/product-details/similar1.jpg" alt=""></a>
-										  <a href=""><img src="images/product-details/similar2.jpg" alt=""></a>
-										  <a href=""><img src="images/product-details/similar3.jpg" alt=""></a>
-										</div>
-										
-									</div>
 
-								  <!-- Controls -->
-								  <a class="left item-control" href="#similar-product" data-slide="prev">
-									<i class="fa fa-angle-left"></i>
-								  </a>
-								  <a class="right item-control" href="#similar-product" data-slide="next">
-									<i class="fa fa-angle-right"></i>
-								  </a>
+				<?php 
+					$produit=$_SESSION['produit'];
+					date_default_timezone_set('UTC');
+					$myDate = date('Y-m-d');
+					
+					echo "
+				<div class=\"col-sm-14 padding-right\">
+					<div class=\"product-details\"><!--product-details-->
+						<div class=\"col-sm-5\">
+							<div class=\"view-product\">
+								<img src=\"vue/img/" . $produit[0]['photo'] . "\" alt=\"\" />
 							</div>
-
 						</div>
-						<div class="col-sm-7">
-							<div class="product-information"><!--/product-information-->
-								<img src="images/product-details/new.jpg" class="newarrival" alt="" />
-								<h2>Anne Klein Sleeveless Colorblock Scuba</h2>
-								<p>Web ID: 1089772</p>
-								<img src="images/product-details/rating.png" alt="" />
+
+
+
+						<div class=\"col-sm-7\">
+							<div class=\"product-information\"><!--/product-information-->
+								<img src=\"images/product-details/new.jpg\" class=\"newarrival\" alt=\"\" />
+								<h2>" . $produit[0]['modele'] . "</h2>
+								<p> " . $produit[0]['etat'] . "</p>
+									
 								<span>
-									<span>US $59</span>
-									<label>Quantity:</label>
-									<input type="text" value="3" />
-									<button type="button" class="btn btn-fefault cart">
-										<i class="fa fa-shopping-cart"></i>
-										Add to cart
+									<span> " . $produit[0]['prix']. "€ /s</span>
+									
+									<button type=\"button\" class=\"btn btn-fefault cart\">
+										<i class=\"fa fa-shopping-cart\"></i>
+										Ajouter au panier
 									</button>
 								</span>
-								<p><b>Availability:</b> In Stock</p>
-								<p><b>Condition:</b> New</p>
-								<p><b>Brand:</b> E-SHOPPER</p>
-								<a href=""><img src="images/product-details/share.png" class="share img-responsive"  alt="" /></a>
+								<p><b>Disponibilité:</b> " . $produit[0]['etat'] . "</p>
+								<a href=\"\"><img src=\"images/product-details/share.png\" class=\"share img-responsive\"  alt=\"\" /></a>
 							</div><!--/product-information-->
 						</div>
 					</div><!--/product-details-->
 					
-					<div class="category-tab shop-details-tab"><!--category-tab-->
-						<div class="col-sm-12">
-							<ul class="nav nav-tabs">
-								<li><a href="#details" data-toggle="tab">Details</a></li>
+					<div class=\"category-tab shop-details-tab\"><!--category-tab-->
+						<div class=\"col-sm-12\">
+							<ul class=\"nav nav-tabs\">
+								<li><a href=\"#details\" data-toggle=\"tab\">Details</a></li>
 							</ul>
 						</div>
-						
+						<label for=\"start\">Date debut:</label>
+
+						<input type=\"date\" id=\"start\" name=\"trip-start\"
+       
+       					min=\"$myDate\" max=\"2021-12-31\">
+
+
+						<label for=\"start\">Date fin:</label>
+
+					   <input type=\"date\" id=\"start\" name=\"trip-start\"
+	  
+					   min=\"$myDate\" max=\"2021-12-31\">
+
 					</div><!--/category-tab-->					
-				</div>
+				</div>";						
+				?>
 			</div>
 		</div>
 	</section> 
