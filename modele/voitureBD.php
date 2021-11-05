@@ -153,4 +153,19 @@
 		}
 		return $bool;
 	}
+
+	function ajoutVoiture($image, $modele, $prix){
+		require('./modele/connectBD.php');
+		$sql="INSERT INTO voiture(etat, photo, modele, prix) VALUES ('disponible', :img, :mdl, :prix)";
+		try{
+			$commande = $pdo->prepare($sql);
+			$commande->bindParam(':img', $image);
+			$commande->bindParam(':mdl', $modele);
+			$commande->bindParam(':prix', $prix);
+			$bool = $commande->execute();
+		} catch(PDOException $e){
+			echo("Echec d'ajout de véhicule : " . $e->getMessage() . "\n");
+			die();
+		}
+	}
 ?>

@@ -8,12 +8,13 @@
 				</div>
 				
 				<div class="col-sm-9 padding-right">
-					<form action="index.php?controle=voiture&action=ajouterVoiture" method="post">
-						<input type="file" placeholder="choisir un fichier" name="voiture" accept="image/png, image/jpeg" />
-						<input type="text" placeholder="Modele" name="modele"/>
-						<input type="number" placeholder="Prix" name="prix"/>
+					<form action="index.php?controle=voiture&action=ajouterVoiture" method="post" enctype="multipart/form-data">
+						<input type="file" placeholder="choisir un fichier" name="voitureAjout"/>
+						<input type="text" placeholder="Modele" name="modeleAjout"/>
+						<input type="number" placeholder="Prix" name="prixAjout"/>
 						<button type="submit" class="btn btn-default">Ajouter</button>
 					</form>
+					<div id ="msgErr"> <?php $msg=isset($msgErr)?trim($msgErr):''; echo $msg; ?> </div>
 				</div>
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
