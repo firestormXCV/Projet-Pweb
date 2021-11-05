@@ -168,4 +168,18 @@
 			die();
 		}
 	}
+
+	function supprimerVoiture($id){
+		require('./modele/connectBD.php');
+		$sql="DELETE FROM voiture WHERE id=:id";
+		try{
+			$commande = $pdo->prepare($sql);
+			$commande->bindParam(':id', $id);
+			$bool = $commande->execute();
+		} catch(PDOException $e){
+			echo("Echec d'ajout de véhicule : " . $e->getMessage() . "\n");
+			die();
+		}
+
+	}
 ?>

@@ -20,7 +20,8 @@
 							} else {
 								echo $_SESSION['msgErr'];
 							}
-						?> </div>
+						?>
+					</div>
 				</div>
 				
 				<div class="col-sm-9 padding-right">
