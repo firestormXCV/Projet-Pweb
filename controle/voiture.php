@@ -49,8 +49,12 @@ function ajouterVoiture() {
 	require("./modele/voitureBD.php");
 	$modele = isset($_POST['modeleAjout'])?trim($_POST['modeleAjout']):'';
 	$prix = isset($_POST['prixAjout'])?trim($_POST['prixAjout']):'';
-
-	if($_FILES["voitureAjout"]['error'] == 0) {
+	$msg='';
+	$_SESSION['msgErr']=$msg;
+	if(count($_POST) == 0){
+		$_SESSION['msgErr']=$msg;
+	}
+	if(!empty($modele) && !empty($prix) && !empty($_FILES['voitureAjout']['name'])) {
 		$fileName = $_FILES["voitureAjout"]['name'];
     	$fileSize = $_FILES["voitureAjout"]['size'];
     	$fileTmpName  = $_FILES["voitureAjout"]['tmp_name'];
@@ -59,16 +63,14 @@ function ajouterVoiture() {
 		ajoutVoiture($fileName, $modele, $prix);
 		$nv_chemin = "./vue/img";
 		move_uploaded_file($fileTmpName, "$nv_chemin/$fileName");
-
-		$nextUrl="index.php?controle=voiture&action=listVoitureLoueur";
-		header("Location:" . $nextUrl);
+		$msg="Le véhicule " . $modele . " a été ajouté au prix de " . $prix . " par jour.\n";
+		$_SESSION['msgErr']=$msg;
 	} else {
-		$msgErr = "Veuillez remplir tous les champs";
-		die();
+		$msg = "Veuillez remplir tous les champs";
+		$_SESSION['msgErr']=$msg;
 	}
+
+	$nextUrl="index.php?controle=voiture&action=listVoitureLoueur";
+	header("Location:" . $nextUrl);
 }
-
-
-
-
 ?>

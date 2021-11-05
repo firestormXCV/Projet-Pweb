@@ -14,7 +14,7 @@
 						<input type="number" placeholder="Prix" name="prixAjout"/>
 						<button type="submit" class="btn btn-default">Ajouter</button>
 					</form>
-					<div id ="msgErr"> <?php $msg=isset($msgErr)?trim($msgErr):''; echo $msg; ?> </div>
+					<div id ="msgErr"> <?php echo $_SESSION['msgErr']; ?> </div>
 				</div>
 				
 				<div class="col-sm-9 padding-right">
