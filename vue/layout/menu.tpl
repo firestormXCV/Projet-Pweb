@@ -66,7 +66,7 @@
 										echo '<li><a href=""><i class="fa fa-user"></i>'.$nom.'</a></li>';
 									}
 								?>
-								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Panier</a></li>
+								<li><a href="index.php?controle=utilisateur&action=panier"><i class="fa fa-shopping-cart"></i> Panier</a></li>
 								<!--Ajouter un truc pour que ca affiche deconnexion si connecté sinon connexion !!!!!!!!!!!!!!   -->
 								<?php 
 									if(!empty($_SESSION['profil'])){

@@ -57,6 +57,29 @@
 		
 	}
 	
+	function panier(){
+		//$_SESSION['panier']=array();
+		//var_dump($_SESSION['produit']); die(); //pour savoir la voiture choisie
+		
+		$dateDeb=isset($_POST['dateDebut'])?trim($_POST['dateDebut']):'';
+		$dateFin=isset($_POST['dateFin'])?trim($_POST['dateFin']):'';
+		if($dateDeb==''){
+			$id=$_SESSION['produit'][0]['idVoiture'];
+			$_SESSION['msgErr']='Date de début manquante !';
+			$nexturl = "index.php?controle=produit&action=afficheProduit&id=$id";
+			header("Location:" . $nexturl);
+		}
+		else{
+			$id=$_SESSION['produit'][0]['idVoiture'];
+			$location=array("idVoiture"=>$id,"dateDebut"=>$dateDeb,"dateFin"=>$dateFin);
+			$_SESSION['panier'][]=$location;
+			//var_dump($_SESSION);die();
+		}
+
+
+		require("./vue/layout/layout.tpl");
+	}
+
 	function bye() {
 		session_destroy();
 		header("Location: index.php");
