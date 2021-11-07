@@ -94,11 +94,20 @@
 				}
 			}
 			//$id=$_SESSION['produit'][0]['idVoiture'];
-			$location=array("idVoiture"=>$id,"dateDebut"=>$dateDeb,"dateFin"=>$dateFin);
+			date_default_timezone_set('UTC');
+			$dateDif = abs(strtotime($dateFin) - strtotime($dateDeb));
+			$dateDif = $dateDif /60;
+			$dateDif = $dateDif /60;
+			$dateDif = $dateDif /24;
+			$dateDif +1;
+			$location=array("idVoiture"=>$id,"dateDebut"=>$dateDeb,"dateFin"=>$dateFin, "dateDif"=>$dateDif);
 			$_SESSION['panier'][]=$location;
 			//var_dump($_SESSION);die();
 			
 		}
+		
+
+
 
 		$nexturl = "index.php?controle=utilisateur&action=panier";
 		header("Location:" . $nexturl);

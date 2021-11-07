@@ -37,7 +37,7 @@
 												<div class=\"productinfo text-center\">
 													<img src=\"vue/img/" . $car[2] . "\" alt=\"car-pic\" />
 													<h2>" . $car[3] . "</h2>
-													<p>" . $car[4] . "€ /s</p>
+													<p>" . $car[4] . "€ /j</p>
 													<a href=\"#\" class=\"btn btn-default add-to-cart\"></i>Info</a>
 												</div>
 										</div>

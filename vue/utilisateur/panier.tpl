@@ -39,16 +39,21 @@
 							  ";
 							}
 							else{
+								$prixtot = 0;
 								foreach($_SESSION['panier'] as $location){
 
 									foreach($_SESSION['voitures'] as $voiture){
 										if($location['idVoiture']==$voiture['idVoiture']){
+											
 											$idVoiture=$location['idVoiture'];
 											$photo=$voiture['photo'];
 											$modele=$voiture['modele'];
 											$prix=$voiture['prix'];
 											$deb=$location['dateDebut'];
 											$fin=$location['dateFin'];
+											$dateDiff=$location['dateDif'];
+											$prix=$dateDiff*$prix;
+											$prixtot=$prixtot + $prix;
 											echo "
 												<tr>
 													<td class=\"cart_product\">
@@ -91,7 +96,7 @@
 									}
 										
 								}
-
+								echo "<p>Total: " . $prixtot ."<p>";
 							}
 							//var_dump($_SESSION);die();
 

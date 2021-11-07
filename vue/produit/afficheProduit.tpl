@@ -35,7 +35,7 @@
 								<p> " . $produit[0]['etat'] . "</p>
 									
 								<span>
-									<span> " . $produit[0]['prix']. "€ /s</span>									
+									<span> " . $produit[0]['prix']. "€ /j</span>									
 								</span>
 								<p><b>Disponibilité:</b> " . $produit[0]['etat'] . "</p>
 								<a href=\"\"><img src=\"images/product-details/share.png\" class=\"share img-responsive\"  alt=\"\" /></a>

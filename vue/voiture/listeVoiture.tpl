@@ -105,14 +105,14 @@
 												<div class=\"productinfo text-center\">
 													<img src=\"vue/img/" . $car[2] . "\" alt=\"car-pic\" />
 													<h2>" . $car[3] . "</h2>
-													<p>" . $car[4] . "€ /s</p>
+													<p>" . $car[4] . "€ /j</p>
 													<a href=\"index.php?controle=produit&action=afficheProduit&id=$car[0]\" class=\"btn btn-default add-to-cart\"><i class=\"fa fa-shopping-cart\"></i>Louer</a>
 													<a href=\"#\" class=\"btn btn-default add-to-cart\"></i>Info</a>
 												</div>
 												<div class=\"product-overlay\">
 													<div class=\"overlay-content\">
 														<h2>$car[3]</h2>
-														<p>$car[4]€ /s</p>
+														<p>$car[4]€ /j</p>
 														<a href=\"index.php?controle=produit&action=afficheProduit&id=$car[0]\" class=\"btn btn-default add-to-cart\"><i class=\"fa fa-shopping-cart\"></i>Louer</a>
 													</div>
 												</div>
