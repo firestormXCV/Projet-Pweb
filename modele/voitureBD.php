@@ -211,14 +211,18 @@
 
 	function retirerImgVoiture($img){
 		require('./modele/connectBD.php');
-		$sql="SELECT photo FROM voiture WHERE photo=:photo;";
+		$sql="SELECT * FROM voiture WHERE photo=:photo;";
 		$nv_chemin="./vue/img";
 		try{
 			$commande = $pdo->prepare($sql);
 			$commande->bindParam(':photo', $img);
 			$bool = $commande->execute();
 			if ($bool) {
-				unlink("$nv_chemin/$img");
+
+				$resultat = $commande->fetchAll(PDO::FETCH_ASSOC);
+				if(count($resultat) == 1){
+					unlink("$nv_chemin/$img");
+				}
 			}
 		} catch(PDOException $e){
 			echo("Echec d'ajout de véhicule : " . $e->getMessage() . "\n");
