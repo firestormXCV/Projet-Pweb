@@ -73,4 +73,10 @@ function ajouterVoiture() {
 	$nextUrl="index.php?controle=voiture&action=listVoitureLoueur";
 	header("Location:" . $nextUrl);
 }
+
+function supprimerVoiture(){
+	require('./modele/voitureBD.php');
+	$nextUrl="index.php?controle=voiture&action=listVoitureLoueur";
+	header("Location:" . $nextUrl);
+}
 ?>
