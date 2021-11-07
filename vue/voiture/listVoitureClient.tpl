@@ -11,7 +11,7 @@
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
 					<?php 
-					
+					//var_dump($_SESSION);die();
 					$msg=isset($_SESSION['msgFinCommande'])?$_SESSION['msgFinCommande']:'';
 					echo"<h3>$msg</h3>";
 					unset($_SESSION['msgFinCommande']);
@@ -20,25 +20,28 @@
 
 						<?php
 						$msg=isset($_SESSION['msgFinCommande'])?$_SESSION['msgFinCommande']:'';
-						$_SESSION['voitures']=$voitures;
+						//$_SESSION['voitures']=$voitures;
 
 						
 
-						foreach($voitures as $voiture) {
-							$car;
+						foreach($_SESSION['voitures'] as $voiture) {
+							//var_dump($_SESSION['voitures']); die();
+							//$car;
 							
-							foreach($voiture as $v) {
+							/*foreach($voiture as $v) {
 								$car[] = $v;								
 							}
-							
+							//var_dump($car); die();*/
 							echo "
 								<div class=\"col-sm-4\">
 									<div class=\"product-image-wrapper\">
 										<div class=\"single-products\">
 												<div class=\"productinfo text-center\">
-													<img src=\"vue/img/" . $car[2] . "\" alt=\"car-pic\" />
-													<h2>" . $car[3] . "</h2>
-													<p>" . $car[4] . "€ /j</p>
+													<img src=\"vue/img/" . $voiture['photo'] . "\" alt=\"car-pic\" />
+													<h2>" . $voiture['modele'] . "</h2>
+													<p>" . $voiture['prix'] . "€ /j</p>
+													<p>Date début : " . $voiture['dateD'] . " </p>
+													<p>Date fin : " . $voiture['dateF'] . "</p>
 													<a href=\"#\" class=\"btn btn-default add-to-cart\"></i>Info</a>
 												</div>
 										</div>

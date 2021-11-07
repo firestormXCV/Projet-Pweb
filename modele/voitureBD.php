@@ -59,8 +59,6 @@
 		}
 		else {
 			$voitures = $resultat;
-
-			//var_dump($profil);
 			return true;
 		}
 	}
