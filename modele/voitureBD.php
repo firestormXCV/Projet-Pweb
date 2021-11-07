@@ -193,7 +193,7 @@
 	function retirerVoiture($id, $img){
 		require('./modele/connectBD.php');
 		$sql="DELETE FROM voiture WHERE idVoiture=:id;";
-		$sql2="SELECT photo FROM voiture WHERE photo=:photo;"
+		$sql2="SELECT photo FROM voiture WHERE photo=:photo";
 		
 		try{
 			$commande = $pdo->prepare($sql);
