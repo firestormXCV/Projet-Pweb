@@ -154,6 +154,27 @@
 		return $bool;
 	}
 
+	/**
+	 * Change l'etat de la voiture pour quelle ne soit plus disponible mais louee.
+	 * Fonction utilisé seulement lorsque les voitures sont disponibles.
+	 * update la table voiture en mettant $idUtilisateur pour la voiture $idVoiture donné en parametre
+	 */
+	function changeEtatLouer($idVoiture,$idUtilisateur){
+		require('./modele/connectBD.php');
+		$sql="UPDATE voiture SET etat=:etat WHERE idVoiture=:idVoiture";
+		try{
+			$commande = $pdo->prepare($sql);
+			$commande->bindParam(':etat', $idUtilisateur);
+			$commande->bindParam(':idVoiture', $idVoiture);
+			$bool = $commande->execute();
+		} catch(PDOException $e){
+			echo("Echec de modification etat : " . $e->getMessage() . "\n");
+			die();
+		}
+
+	}
+
+
 	function ajoutVoiture($image, $modele, $prix){
 		require('./modele/connectBD.php');
 		$sql="INSERT INTO voiture(etat, photo, modele, prix) VALUES ('disponible', :img, :mdl, :prix)";

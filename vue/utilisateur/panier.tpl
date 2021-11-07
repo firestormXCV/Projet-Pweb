@@ -14,69 +14,113 @@
 						<tr class="cart_menu">
 							<td class="image">Voiture</td>
 							<td class="description">Description</td>
-							<td class="price">Prix</td>
-							<!--<td class="quantity">Quantité</td> A supprimer si inutile
-							<td class="total">Total</td>-->
+							<td class="dateLocation">Date de location</td>
+							<td class="price">Prix/j</td>
+							<!--<td class="quantity">Quantité</td> A supprimer si inutile-->
+							<td class="total">Total</td>
 							<td></td> <!--Pour le bouton supprimer-->
 						</tr>
 					</thead>
 					<tbody>
+						
 						<?php
-							foreach($_SESSION['panier'] as $location){
+						//var_dump($_SESSION['panier']);//die();
+							if(!isset($_SESSION['panier'])){ //si le panier est vide afficher un msg 
+								echo "
+								<tr>
+									<td >
+										<h4>Panier vide :( </h4>
+									</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
 
-								foreach($_SESSION['voitures'] as $voiture){
-									if($location['idVoiture']==$voiture['idVoiture']){
-									
-										$photo=$voiture['photo'];
-										$modele=$voiture['modele'];
-										$prix=$voiture['prix'];
-										echo "
-										<tr>
-											<td class=\"cart_product\">
-													<img src=\"$photo\" alt=\"photo voiture\">
-											</td>
-											<td class=\"cart_description\">
-												<h4>$modele</h4>
-											</td>
-											<td class=\"cart_price\">
-												<p>$prix</p>
-											</td>
+							  ";
+							}
+							else{
+								$prixTotal= 0;
+								foreach($_SESSION['panier'] as $location){
+
+									foreach($_SESSION['voitures'] as $voiture){
+										if($location['idVoiture']==$voiture['idVoiture']){
 											
-											<td class=\"cart_delete\">
-												<a class=\"cart_quantity_delete\" href=\"\"><i class=\"fa fa-times\"></i></a> 
-											</td>
-								   		</tr>
-								  		";	   
-										 /* AVANT LE DERNIER Si on veut le remettre
-										 <td class=\"cart_quantity\">
-												<div class=\"cart_quantity_button\">
-													<a class=\"cart_quantity_up\" href=\"\"> + </a>
-													<input class=\"cart_quantity_input\" type=\"text\" name=\"quantity\" value=\"1\" autocomplete=\"off\" size=\"2\">
-													<a class=\"cart_quantity_down\" href=\"\"> - </a>
-												</div>
-											</td>
-											<td class=\"cart_total\">
-												<p class=\"cart_total_price\">$59</p>
-											</td>
-										 */
-										  //pour la quantité à supprimer si inutile 
-										  //pour le bouton supprimer : diriger vers une fonction à creer pour supprimer dans la session la voiture du panier
-									
+											$idVoiture=$location['idVoiture'];
+											$photo=$voiture['photo'];
+											$modele=$voiture['modele'];
+											$prix=$voiture['prix'];
+											$deb=$location['dateDebut'];
+											$fin=$location['dateFin'];
+											$dateDiff=$location['dateDif'];
+											$prixLocation=$dateDiff*$prix;
+											$prixTotal=$prixTotal + $prixLocation;
+											echo "
+												<tr>
+													<td class=\"cart_product\">
+														<img src=\"$photo\" alt=\"photo $modele\">
+													</td>
+													<td class=\"cart_description\">
+														<h4>$modele</h4>
+													</td>
+													<td class=\"cart_price\">
+														<p> De $deb à $fin </p>
+													</td>
+													<td class=\"cart_price\">
+														<p>$prix €</p>
+													</td>
+														<td class=\"cart_total\">
+														<p class=\"cart_total_price\">$prixLocation €</p>
+													</td>
+													<td class=\"cart_delete\">
+														<form action=\"index.php?controle=utilisateur&action=retirerPanier&idVoiture=$idVoiture\" method=\"post\">
+															<button type=\"submit\" class=\"btn btn-default\"><i class=\"fa fa-times\"></i></button>
+														</form>
+													</td>
+												</tr>
+
+											";	   
+											/* AVANT LE DERNIER Si on veut le remettre
+											<td class=\"cart_quantity\">
+													<div class=\"cart_quantity_button\">
+														<a class=\"cart_quantity_up\" href=\"\"> + </a>
+														<input class=\"cart_quantity_input\" type=\"text\" name=\"quantity\" value=\"1\" autocomplete=\"off\" size=\"2\">
+														<a class=\"cart_quantity_down\" href=\"\"> - </a>
+													</div>
+												</td>
+												<td class=\"cart_total\">
+													<p class=\"cart_total_price\">$59</p>
+												</td>
+											*/
+											//pour la quantité à supprimer si inutile 
+											//pour le bouton supprimer : diriger vers une fonction à creer pour supprimer dans la session la voiture du panier
+										
+										}
 									}
+										
 								}
-									
 							}
 							//var_dump($_SESSION);die();
-
+							
 						?>
 					</tbody>
 				</table>
+				<?php 
+					$total=isset($prixTotal)?$prixTotal:'0';
+					echo "<h4 class=\"cart_total_price\">Total panier : $total €</h4>";
+					if(isset($_SESSION['panier'])){
+						echo '<a class="btn btn-default check_out " href="index.php?controle=utilisateur&action=validerPanier">Valider le panier</a> ';
+					}
+				?>
 			</div>
 		</div>
+
+			
 	</section> <!--/#cart_items-->
 
 
-	<!--POUR LA FACTURE : AVEC REDUCTION OU PAS     ----------       A FAIRE -->
+	<!--/#do_action-->
+	<!--
 	<section id="do_action">
 		<div class="container">
 			<div class="heading">
@@ -152,4 +196,4 @@
 				</div>
 			</div>
 		</div>
-	</section><!--/#do_action-->
+	</section>-->

@@ -1,11 +1,12 @@
 ﻿<?php
 	/*Fonctions-modèle réalisant les requètes de gestion des utilisateurs en base de données*/
 	
-	// verif_bd : fonction booléenne. 
-	// Si vraie, alors le profil de l'utilisateur est affecté en sortie à $profil
 	
-	
-	//Verifier si le client existe
+	/**
+	 * Verifie l'existance du client/loueur 
+	 * avec l'email et le mot de passe en parametre
+	 * return vrai ou faux et un array contenant le profil de l'utilisateur
+	 */
 	function verif_LoginBD($email,$mdp,&$profil) {
 		require('modele/connectBD.php'); //$pdo est défini dans ce fichier
 		$md5mdp=md5($mdp);
@@ -37,6 +38,11 @@
 			return true;
 		}
 	}
+
+	/**
+	 * Inscrit un nouveau client entreprise
+	 * avec le nom, l'email et le mot de passe en parametre
+	 */
 	function inscriptionAbonne($nom, $mdp, $email){
 		require('modele/connectBD.php');
 		//var_dump($mdp);die();

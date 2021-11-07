@@ -30,7 +30,7 @@
 				<div class="row">
 					<div class="col-md-4 clearfix">
 						<div class="logo pull-left">
-							<a href="index.php?controle=voiture&action=listeVoiture"><img src="vue/images/home/logo.png" alt="" /></a>
+							<a href="index.php?controle=voiture&action=listeVoiture"><img src="vue/images/home/logo.jpg" alt="" /></a>
 						</div>
 						<div class="btn-group pull-right clearfix">
 							<div class="btn-group">
@@ -63,7 +63,7 @@
 									if(!empty($_SESSION['profil'])){
 										$profil = $_SESSION['profil'];
 										$nom = $profil[0]['nom'];
-										echo '<li><a href=""><i class="fa fa-user"></i>'.$nom.'</a></li>';
+										echo '<li><a href="index.php?controle=utilisateur&action=compte"><i class="fa fa-user"></i>'.$nom.'</a></li>';
 									}
 								?>
 								<li><a href="index.php?controle=utilisateur&action=panier"><i class="fa fa-shopping-cart"></i> Panier</a></li>
@@ -111,18 +111,14 @@
 										} else {
 											echo '<li><a href="index.php?controle=voiture&action=listVoitureLoueur" class="active">Ma flotte ' . $rolee . '</a></li>';
 										}
+
+										if (strcmp($rolee,'CLIENT') == 0 || strcmp($rolee,'LOUEUR') == 0) {
+											echo '<li><a href="contact-us.html">Facture</a></li>';
+										}
 									}
 								?>
 
 								
-								<li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-                                        <li><a href="blog.html">Blog List</a></li>
-										<li><a href="blog-single.html">Blog Single</a></li>
-                                    </ul>
-                                </li> 
-								<li><a href="404.html">404</a></li>
-								<li><a href="contact-us.html">Contact</a></li>
 							</ul>
 						</div>
 					</div>
