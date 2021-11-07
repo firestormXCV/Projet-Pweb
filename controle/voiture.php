@@ -76,6 +76,8 @@ function ajouterVoiture() {
 
 function supprimerVoiture(){
 	require('./modele/voitureBD.php');
+	//$id = Surement une variable session à l'aide de $car du tpl ?
+	//retirerVehicule($id);
 	$nextUrl="index.php?controle=voiture&action=listVoitureLoueur";
 	header("Location:" . $nextUrl);
 }
