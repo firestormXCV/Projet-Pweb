@@ -8,13 +8,13 @@
 
 
 						<form action="index.php?controle=utilisateur&action=login" method="post">
-							<input type="email" placeholder="Email Address" name="email" value="Isaac@gmail.com"/> <!--name pour le php, recup avec $_post-->
+							<input type="email" placeholder="Email Address" name="email" value="<?php if(isset($_COOKIE["member_login"])) { echo $_COOKIE["member_login"]; } ?>" <!--name pour le php, recup avec $_post-->
 							<input type="password" placeholder="Mot de passe" name="mdp" value="MD5"/>
 							<span>
-								<input type="checkbox" class="checkbox"> 
-								Keep me signed in
+								<input type="checkbox" name="remember" id="remember" <?php if(isset($_COOKIE["member_login"])) { ?> checked <?php } ?> class="checkbox"> 
+								Se souvenir de moi
 							</span>
-							<button type="submit" class="btn btn-default">Login</button>
+							<button type="submit" class="btn btn-default">Connexion</button>
 						</form>
 						<div id ="msgLog"> <?php $msg=isset($msgLog)?trim($msgLog):''; echo $msg; ?> </div>
 

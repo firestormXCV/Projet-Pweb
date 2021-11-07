@@ -17,6 +17,14 @@
 				
                 $_SESSION['profil'] = $profil;
 				$msgLog='';
+
+				if(!empty($_POST["remember"])) {
+					setcookie ("member_login",$email ,time()+ (10 * 365 * 24 * 60 * 60));
+				} else {
+					if(isset($_COOKIE["member_login"])) {
+						setcookie ("member_login","");
+				}
+			}
 				//en fonction du role envoyer une page compte client ou loueur
                 $nexturl = "index.php?controle=utilisateur&action=compte";
                 header ("Location:" . $nexturl);
