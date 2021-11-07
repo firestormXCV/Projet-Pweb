@@ -29,9 +29,9 @@
 
 
 						<form action="index.php?controle=utilisateur&action=inscription" method="post">
-							<input type="text" name="nomIns" placeholder="Nom" value="NomDeTest"/>
-							<input type="email" name="emailIns" placeholder="Email" value="EmailDeTest@gmail.com"/>
-							<input type="password" name="mdpIns" placeholder="Mot de passe" value="Ok"/>
+							<input type="text" name="nomIns" placeholder="Nom" />
+							<input type="email" name="emailIns" placeholder="Email" />
+							<input type="password" name="mdpIns" placeholder="Mot de passe" />
 							<button type="submit" class="btn btn-default">S'Inscrire</button>
 						</form>
 						<div id ="msgSign"> <?php $msg=isset($msgSign)?trim($msgSign):''; echo $msg; ?> </div>
