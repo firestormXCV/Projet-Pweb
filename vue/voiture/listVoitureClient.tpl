@@ -23,34 +23,36 @@
 						//$_SESSION['voitures']=$voitures;
 
 						
-
-						foreach($_SESSION['voitures'] as $voiture) {
-							//var_dump($_SESSION['voitures']); die();
-							//$car;
-							
-							/*foreach($voiture as $v) {
-								$car[] = $v;								
-							}
-							//var_dump($car); die();*/
-							echo "
-								<div class=\"col-sm-4\">
-									<div class=\"product-image-wrapper\">
-										<div class=\"single-products\">
-												<div class=\"productinfo text-center\">
-													<img src=\"vue/img/" . $voiture['photo'] . "\" alt=\"car-pic\" />
-													<h2>" . $voiture['modele'] . "</h2>
-													<p>" . $voiture['prix'] . "€ /j</p>
-													<p>Date début : " . $voiture['dateD'] . " </p>
-													<p>Date fin : " . $voiture['dateF'] . "</p>
-													<a href=\"#\" class=\"btn btn-default add-to-cart\"></i>Info</a>
-												</div>
+						if(isset($_SESSION['voituresClient'])){
+							foreach($_SESSION['voituresClient'] as $voiture) {
+								//var_dump($_SESSION['voituresClient']); die();
+								//$car;
+								
+								/*foreach($voiture as $v) {
+									$car[] = $v;								
+								}
+								//var_dump($car); die();*/
+								$voiture['dateD']=isset($voiture['dateD'])?$voiture['dateD']:'';
+								$voiture['dateF']=isset($voiture['dateF'])?$voiture['dateF']:'';
+								echo "
+									<div class=\"col-sm-4\">
+										<div class=\"product-image-wrapper\">
+											<div class=\"single-products\">
+													<div class=\"productinfo text-center\">
+														<img src=\"vue/img/" . $voiture['photo'] . "\" alt=\"car-pic\" />
+														<h2>" . $voiture['modele'] . "</h2>
+														<p>" . $voiture['prix'] . "€ /j</p>
+														<p>Date début : " . $voiture['dateD'] . " </p>
+														<p>Date fin : " . $voiture['dateF'] . "</p>
+														<a href=\"#\" class=\"btn btn-default add-to-cart\"></i>Info</a>
+													</div>
+											</div>
 										</div>
-									</div>
-								</div>";
-							
-							unset($car);							
+									</div>";
+								
+								unset($car);							
+							}
 						}
-							
 						?>				
 				</div>
 			</div>

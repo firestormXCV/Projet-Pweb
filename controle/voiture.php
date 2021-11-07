@@ -24,17 +24,21 @@ function listVoitureClient() {
 	require ("./modele/voitureBD.php");
 	require("./modele/factureBD.php");
 	if(afficheVoitureClient($voitures)){
-		$_SESSION['voitures']=$voitures;
+		$_SESSION['voituresClient']=$voitures;
 	}else{
 		$msg='Pas de voitures !';
 	}
-	
-	foreach($_SESSION['voitures'] as $key=>$voiture){
-		datesLocation($_SESSION['profil'][0]['id'],$voiture['idVoiture'],$dates);
-		//var_dump($dates[0]['dateD']); die();
-		$_SESSION['voitures'][$key]['dateD']=$dates[0]['dateD'];
-		$_SESSION['voitures'][$key]['dateF']=$dates[0]['dateF'];
-		//var_dump($_SESSION); die();
+	if(isset($_SESSION['voituresClient'])){
+		foreach($_SESSION['voituresClient'] as $key=>$voiture){
+			datesLocation($_SESSION['profil'][0]['id'],$voiture['idVoiture'],$dates);
+			//var_dump($dates[0]['dateD']); die();
+			
+			if(!empty($dates)){
+				$_SESSION['voituresClient'][$key]['dateD']=$dates[0]['dateD'];
+				$_SESSION['voituresClient'][$key]['dateF']=$dates[0]['dateF'];
+			//var_dump($_SESSION); die();
+			}
+		}
 	}
 	require ("./vue/layout/layout.tpl");
 }
