@@ -15,9 +15,9 @@
 							<td class="image">Voiture</td>
 							<td class="description">Description</td>
 							<td class="dateLocation">Date de location</td>
-							<td class="price">Prix</td>
-							<!--<td class="quantity">Quantité</td> A supprimer si inutile
-							<td class="total">Total</td>-->
+							<td class="price">Prix/j</td>
+							<!--<td class="quantity">Quantité</td> A supprimer si inutile-->
+							<td class="total">Total</td>
 							<td></td> <!--Pour le bouton supprimer-->
 						</tr>
 					</thead>
@@ -39,7 +39,7 @@
 							  ";
 							}
 							else{
-								$prixtot = 0;
+								$prixTotal= 0;
 								foreach($_SESSION['panier'] as $location){
 
 									foreach($_SESSION['voitures'] as $voiture){
@@ -52,8 +52,8 @@
 											$deb=$location['dateDebut'];
 											$fin=$location['dateFin'];
 											$dateDiff=$location['dateDif'];
-											$prix=$dateDiff*$prix;
-											$prixtot=$prixtot + $prix;
+											$prixLocation=$dateDiff*$prix;
+											$prixTotal=$prixTotal + $prixLocation;
 											echo "
 												<tr>
 													<td class=\"cart_product\">
@@ -68,7 +68,9 @@
 													<td class=\"cart_price\">
 														<p>$prix €</p>
 													</td>
-													
+														<td class=\"cart_total\">
+														<p class=\"cart_total_price\">$prixLocation €</p>
+													</td>
 													<td class=\"cart_delete\">
 														<form action=\"index.php?controle=utilisateur&action=retirerPanier&idVoiture=$idVoiture\" method=\"post\">
 															<button type=\"submit\" class=\"btn btn-default\"><i class=\"fa fa-times\"></i></button>
@@ -96,14 +98,18 @@
 									}
 										
 								}
-								echo "<p>Total: " . $prixtot ."<p>";
 							}
 							//var_dump($_SESSION);die();
-
+							
 						?>
 					</tbody>
 				</table>
-		<a class="btn btn-default check_out " href="index.php?controle=utilisateur&action=validerPanier">Valider le panier</a> 
+				<?php 
+					echo "<h4 class=\"cart_total_price\">Total panier : $prixTotal €</h4>";
+					if(isset($_SESSION['panier'])){
+						echo '<a class="btn btn-default check_out " href="index.php?controle=utilisateur&action=validerPanier">Valider le panier</a> ';
+					}
+				?>
 			</div>
 		</div>
 
