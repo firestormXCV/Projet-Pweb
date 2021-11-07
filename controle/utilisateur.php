@@ -53,7 +53,6 @@
 		} else {
 			$msgSign = "Utilisateur déjà existant";//msg non envoyé dans l'autre page car variable perdue. Mettre dans session ?
 			unset($_SESSION['profil']); //pour ne pas afficher deconnxion lorsqu'il y a une erreur de connexion
-				
 			//header("Location:" . $nexturl);
 		}
 		$nexturl = "index.php?controle=utilisateur&action=login";
