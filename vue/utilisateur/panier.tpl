@@ -24,7 +24,7 @@
 					<tbody>
 						
 						<?php
-						var_dump($_SESSION['panier']);//die();
+						//var_dump($_SESSION['panier']);//die();
 							if(!isset($_SESSION['panier'])){ //si le panier est vide afficher un msg 
 								echo "
 								<tr>

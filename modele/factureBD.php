@@ -1,16 +1,10 @@
 <?php
-    function creerFacture($idEntreprise,$idVoiture,$dateDebut,$dateFin){
+    function creerFacture($idEntreprise,$idVoiture,$dateDebut,$dateFin,$duree,$prix){
         require('./modele/connectBD.php');
 		$sql="INSERT INTO facture(ide, idv, dateD, dateF, valeur) VALUES (:ide, :idv, :dateD, :dateF, :valeur)";
+       
+        $valeur= $prix * $duree; //calcul de prix de la location totale pour la duree (datedebut-datefin)
         
-        //$valeur= prix location par jour * $duree //calcul de prix de la location totale pour la duree (datedebut-datefin)
-        //$duree=nb de jour entre date debut et date fin 
-        /*
-            https://stackoverflow.com/questions/2040560/finding-the-number-of-days-between-two-dates
-            $date1 = new DateTime('2010-07-06');
-            $date2 = new DateTime('2010-07-09');
-            $days  = $date2->diff($date1)->format('%a');
-        */
         
 		try{
 			$commande = $pdo->prepare($sql);
@@ -18,7 +12,7 @@
 			$commande->bindParam(':idv', $idVoiture);
             $commande->bindParam(':dateD', $dateDebut);
             $commande->bindParam(':dateF', $dateFin);
-            //$commande->bindParam(':valeur', $valeur);
+            $commande->bindParam(':valeur', $valeur);
 			$bool = $commande->execute();
 		} catch(PDOException $e){
 			echo("Echec de modification etat : " . $e->getMessage() . "\n");

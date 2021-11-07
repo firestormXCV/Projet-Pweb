@@ -103,7 +103,6 @@
 			$location=array("idVoiture"=>$id,"dateDebut"=>$dateDeb,"dateFin"=>$dateFin, "dateDif"=>$dateDif);
 			$_SESSION['panier'][]=$location;
 			//var_dump($_SESSION);die();
-			
 		}
 		
 		$nexturl = "index.php?controle=utilisateur&action=panier";
@@ -143,13 +142,18 @@
 		require("./modele/voitureBD.php");
 		require("./modele/factureBD.php");
 		foreach($_SESSION['panier'] as $location){
+			foreach($_SESSION['voitures'] as $voiture){
+				if($location['idVoiture']==$voiture['idVoiture']){
+					$prix=$voiture['prix'];
+				}
+			}
 			changeEtatLouer($location['idVoiture'],$_SESSION['profil'][0]['id']);
-			creerFacture($_SESSION['profil'][0]['id'],$location['idVoiture'],$location['dateDebut'],$location['dateFin']);
+			creerFacture($_SESSION['profil'][0]['id'],$location['idVoiture'],$location['dateDebut'],$location['dateFin'],$location['dateDif'],$prix);
 		}
 		//afficher un message pour la fin de la commande de location et supprimer le panier 
 		$_SESSION['msgFinCommande']="Merci pour votre commande !";
 		unset($_SESSION['panier']);
-		$nexturl = "index.php?controle=utilisateur&action=panier";
+		$nexturl = "index.php?controle=utilisateur&action=compte";
 		header("Location:" . $nexturl);
 	}
 	/**

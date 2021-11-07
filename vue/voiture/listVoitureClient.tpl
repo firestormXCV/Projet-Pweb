@@ -13,7 +13,8 @@
 					<?php 
 					
 					$msg=isset($_SESSION['msgFinCommande'])?$_SESSION['msgFinCommande']:'';
-					echo'<h3>$msg</h3>';
+					echo"<h3>$msg</h3>";
+					unset($_SESSION['msgFinCommande']);
 					?>
 						<h2 class="title text-center">Mes Voitures Louées</h2>
 
