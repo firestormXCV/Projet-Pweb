@@ -56,10 +56,17 @@
 							<label for=\"start\">Date fin:</label>
 
 							<input type=\"date\" id=\"start\" name=\"dateFin\"min=\"$myDate\" max=\"2021-12-31\">
-							<button type=\"submit\" class=\"btn btn-fefault cart\">
-								<i class=\"fa fa-shopping-cart\"></i>
-								Ajouter au panier
-							</button>
+
+							";
+							if (!empty($_SESSION['profil'])) {
+								echo "<button type=\"submit\" class=\"btn btn-fefault cart\">
+									<i class=\"fa fa-shopping-cart\"></i>
+									Ajouter au panier
+								</button>";
+							}else {
+								echo "<p>Pour louer un véhicule merci de vous connecter.</p>";
+							}
+							echo"
 						</form>
 					</div><!--/category-tab-->					
 				</div>";						
@@ -68,3 +75,4 @@
 			
 		</div>
 	</section> 
+

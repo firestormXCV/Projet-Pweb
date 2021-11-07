@@ -47,8 +47,6 @@
 													<h2>" . $car[3] . "</h2>
 													<p>Identifiant du véhicule : " . $car[0] . "</p>
 													<p>" . $car[4] . "€/j</p>
-													<a href=\"#\" class=\"btn btn-default add-to-cart\"><i class=\"fa fa-shopping-cart\"></i>Louer</a>
-													<a href=\"#\" class=\"btn btn-default add-to-cart\"></i>Info</a>
 													<a href=\"index.php?controle=voiture&action=supprimerVoiture&id=" . $car[0] . "&img=" . $car[2] . "\" class=\"btn btn-default add-to-cart\"></i>Supprimer</a>
 												</div>
 												<!--<div class=\"product-overlay\">
@@ -90,8 +88,6 @@
 													<img src=\"vue/img/" . $car[2] . "\" alt=\"car-pic\" />
 													<h2>" . $car[3] . "</h2>
 													<p>" . $car[4] . "€ /j</p>
-													<a href=\"#\" class=\"btn btn-default add-to-cart\"><i class=\"fa fa-shopping-cart\"></i>Louer</a>
-													<a href=\"#\" class=\"btn btn-default add-to-cart\"></i>Info</a>
 													<a href=\"index.php?controle=voiture&action=supprimerVoiture&id=" . $car[0] . "\" class=\"btn btn-default add-to-cart\"></i>Supprimer</a>
 												</div>
 												<div class=\"product-overlay\">
@@ -132,8 +128,6 @@
 													<img src=\"vue/img/" . $car[2] . "\" alt=\"car-pic\" />
 													<h2>" . $car[3] . "</h2>
 													<p>" . $car[4] . "€ /j</p>
-													<a href=\"#\" class=\"btn btn-default add-to-cart\"><i class=\"fa fa-shopping-cart\"></i>Louer</a>
-													<a href=\"#\" class=\"btn btn-default add-to-cart\"></i>Info</a>
 													<a href=\"index.php?controle=voiture&action=supprimerVoiture&id=" . $car[0] . "\" class=\"btn btn-default add-to-cart\"></i>Supprimer</a>
 												</div>
 												<div class=\"product-overlay\">
