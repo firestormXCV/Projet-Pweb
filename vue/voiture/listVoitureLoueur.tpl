@@ -22,6 +22,20 @@
 							}
 						?>
 					</div>
+
+					<form action="index.php?controle=voiture&action=retirerVoiture" method="post" enctype="multipart/form-data">
+						<input type="text" placeholder="Modèle" name="prixAjout"/>
+						<button type="submit" class="btn btn-default">Retirer le véhicule</button>
+					</form>
+					<div id ="msgErr">
+						<?php
+							if(!isset($_SESSION['msgErr'])){
+								$_SESSION['msgErr'] = '';
+							} else {
+								echo $_SESSION['msgErr'];
+							}
+						?>
+					</div>
 				</div>
 				
 				<div class="col-sm-9 padding-right">
