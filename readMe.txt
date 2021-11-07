@@ -1,10 +1,4 @@
-Application test pour mvc.
+Application de location de voitures.
 
-version 3 services,
-c1.a11
-c1.a12
-c2.a21
-
-avec (voir répertoire layout)
-un layout commun pour les vues
-et menu inclus.
+Plusieurs services sont disponible avec un layout commun pour les vues.
+(cf rapport).
