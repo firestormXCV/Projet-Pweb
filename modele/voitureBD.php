@@ -190,12 +190,12 @@
 		}
 	}
 
-	function retirerVoiture($id, $img){
+	function retirerVoiture($id){
 		require('./modele/connectBD.php');
 		$sql="DELETE FROM voiture WHERE idVoiture=:id;";
-		$sql2="SELECT photo FROM voiture WHERE photo=:photo;"
 		
 		try{
+
 			$commande = $pdo->prepare($sql);
 			$commande->bindParam(':id', $id);
 			$bool = $commande->execute();
@@ -207,6 +207,22 @@
 			echo("Echec d'ajout de véhicule : " . $e->getMessage() . "\n");
 			die();
 		}
-		return true;
+	}
+
+	function retirerImgVoiture($img){
+		require('./modele/connectBD.php');
+		$sql="SELECT photo FROM voiture WHERE photo=:photo;";
+		$nv_chemin="./vue/img";
+		try{
+			$commande = $pdo->prepare($sql);
+			$commande->bindParam(':photo', $img);
+			$bool = $commande->execute();
+			if ($bool) {
+				unlink("$nv_chemin/$img");
+			}
+		} catch(PDOException $e){
+			echo("Echec d'ajout de véhicule : " . $e->getMessage() . "\n");
+			die();
+		}
 	}
 ?>

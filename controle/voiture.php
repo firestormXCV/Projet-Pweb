@@ -78,10 +78,10 @@ function supprimerVoiture(){
 	$id=isset($_GET['id'])?trim($_GET['id']):'';
 	$img=isset($_GET['img'])?trim($_GET['img']):'';
 	require('./modele/voitureBD.php');
-	//$id = Surement une variable session à l'aide de $car du tpl ?
-	if (retirerVoiture($id,$img)) {
-		$nextUrl="index.php?controle=voiture&action=listVoitureLoueur";
-		header("Location:" . $nextUrl);
-	}
+	retirerImgVoiture($img);
+	retirerVoiture($id);
+	$nextUrl="index.php?controle=voiture&action=listVoitureLoueur";
+	header("Location:" . $nextUrl);
+	
 }
 ?>
