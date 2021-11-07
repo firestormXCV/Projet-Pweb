@@ -24,6 +24,7 @@
 					<tbody>
 						
 						<?php
+						var_dump($_SESSION['panier']);//die();
 							if(!isset($_SESSION['panier'])){ //si le panier est vide afficher un msg 
 								echo "
 								<tr>
@@ -105,7 +106,8 @@
 					</tbody>
 				</table>
 				<?php 
-					echo "<h4 class=\"cart_total_price\">Total panier : $prixTotal €</h4>";
+					$total=isset($prixTotal)?$prixTotal:'0';
+					echo "<h4 class=\"cart_total_price\">Total panier : $total €</h4>";
 					if(isset($_SESSION['panier'])){
 						echo '<a class="btn btn-default check_out " href="index.php?controle=utilisateur&action=validerPanier">Valider le panier</a> ';
 					}

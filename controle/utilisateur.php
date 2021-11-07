@@ -106,9 +106,6 @@
 			
 		}
 		
-
-
-
 		$nexturl = "index.php?controle=utilisateur&action=panier";
 		header("Location:" . $nexturl);
 		
@@ -119,13 +116,15 @@
 	function retirerPanier(){
 		//var_dump($_GET['idVoiture']);die();
 		$idVoiture=isset($_GET['idVoiture'])?trim($_GET['idVoiture']):'';
-		foreach($_SESSION['panier'] as $location){
+		
+		foreach($_SESSION['panier'] as $key=>$location){
+			//var_dump($_SESSION['panier']);
 			if($location['idVoiture']==$idVoiture){
-				unset($location);
-				break;
+				//var_dump($key);var_dump($location);die();
+				unset($_SESSION['panier'][$key]);
 			}
 		}
-		//var_dump($_SESSION);die();
+		//var_dump($_SESSION['panier']);die();
 		$nexturl = "index.php?controle=utilisateur&action=panier";
 		header("Location:" . $nexturl);
 	}
