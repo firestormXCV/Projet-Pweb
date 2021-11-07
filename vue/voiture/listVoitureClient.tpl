@@ -10,9 +10,15 @@
 				</div>
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
+					<?php 
+					
+					$msg=isset($_SESSION['msgFinCommande'])?$_SESSION['msgFinCommande']:'';
+					echo'<h3>$msg</h3>';
+					?>
 						<h2 class="title text-center">Mes Voitures Louées</h2>
 
 						<?php
+						$msg=isset($_SESSION['msgFinCommande'])?$_SESSION['msgFinCommande']:'';
 						$_SESSION['voitures']=$voitures;
 
 						

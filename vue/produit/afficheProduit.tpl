@@ -50,7 +50,7 @@
 							</ul>
 						</div>
 						$msg
-						<form action=\"index.php?controle=utilisateur&action=panier\" method=\"post\">
+						<form action=\"index.php?controle=utilisateur&action=louer\" method=\"post\">
 							<label for=\"start\">Date debut:</label>
 							<input type=\"date\" id=\"start\" name=\"dateDebut\"min=\"$myDate\" max=\"2021-12-31\">
 							<label for=\"start\">Date fin:</label>

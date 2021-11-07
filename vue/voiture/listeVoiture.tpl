@@ -74,8 +74,11 @@
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Nos Véhicules</h2>
-
+						
 						<?php
+						$msg=isset($_SESSION['msgErr'])?$_SESSION['msgErr']:'';
+						echo"<h4>$msg</h4>"; 		//A STYLISER !!
+
 						$_SESSION['voitures']=$voitures;
 
 						$list[] = "aaaa";
