@@ -90,13 +90,14 @@
 													<p>" . $car[4] . "€ /j</p>
 													<a href=\"index.php?controle=voiture&action=supprimerVoiture&id=" . $car[0] . "\" class=\"btn btn-default add-to-cart\"></i>Supprimer</a>
 												</div>
+												<!--
 												<div class=\"product-overlay\">
 													<div class=\"overlay-content\">
 														<h2>$car[3]</h2>
 														<p>$car[4]€ /j</p>
 														<a href=\"#\" class=\"btn btn-default add-to-cart\"><i class=\"fa fa-shopping-cart\"></i>Louer</a>
 													</div>
-												</div>
+												</div>-->
 										</div>
 									</div>
 								</div>";
@@ -130,6 +131,7 @@
 													<p>" . $car[4] . "€ /j</p>
 													<a href=\"index.php?controle=voiture&action=supprimerVoiture&id=" . $car[0] . "\" class=\"btn btn-default add-to-cart\"></i>Supprimer</a>
 												</div>
+												<!--
 												<div class=\"product-overlay\">
 													<div class=\"overlay-content\">
 														<h2>$car[3]</h2>
@@ -137,6 +139,7 @@
 														<a href=\"#\" class=\"btn btn-default add-to-cart\"><i class=\"fa fa-shopping-cart\"></i>Louer</a>
 													</div>
 												</div>
+												-->
 										</div>
 									</div>
 								</div>";

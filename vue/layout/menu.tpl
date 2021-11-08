@@ -64,9 +64,9 @@
 										$profil = $_SESSION['profil'];
 										$nom = $profil[0]['nom'];
 										echo '<li><a href="index.php?controle=utilisateur&action=compte"><i class="fa fa-user"></i>'.$nom.'</a></li>';
+										echo'<li><a href="index.php?controle=utilisateur&action=panier"><i class="fa fa-shopping-cart"></i> Panier</a></li>';
 									}
 								?>
-								<li><a href="index.php?controle=utilisateur&action=panier"><i class="fa fa-shopping-cart"></i> Panier</a></li>
 								<!--Ajouter un truc pour que ca affiche deconnexion si connecté sinon connexion !!!!!!!!!!!!!!   -->
 								<?php 
 									if(!empty($_SESSION['profil'])){
