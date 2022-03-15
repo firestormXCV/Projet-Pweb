@@ -12,22 +12,23 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Login | E-Shopper</title>
-    <link href="vue/css/bootstrap.min.css" rel="stylesheet">
-    <link href="vue/css/font-awesome.min.css" rel="stylesheet">
-    <link href="vue/css/prettyPhoto.css" rel="stylesheet">
-    <link href="vue/css/price-range.css" rel="stylesheet">
-    <link href="vue/css/animate.css" rel="stylesheet">
-	<link href="vue/css/main.css" rel="stylesheet">
-	<link href="vue/css/responsive.css" rel="stylesheet">
+    <link href="./vue/style/css/bootstrap.min.css" rel="stylesheet">
+	<link href="./vue/style/css/style.css" rel="stylesheet">
+    <!--<link href="./vue/style/css/font-awesome.min.css" rel="stylesheet">
+    <link href="./vue/style/prettyPhoto.css" rel="stylesheet">
+    <link href="./vue/style/css/price-range.css" rel="stylesheet">
+    <link href="./vue/style/css/animate.css" rel="stylesheet">
+	<link href="./vue/style/css/main.css" rel="stylesheet">
+	<link href="./vue/style/css/responsive.css" rel="stylesheet">-->
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->       
     <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="vue/images/ico/apple-touch-icon-144-precomposed.png">
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="vue/images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="vue/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="vue/images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">-->
 
 	</head>
 
@@ -47,11 +48,13 @@
 		<?php  require ("./vue/layout/footer.tpl"); ?>
 		<!--FIN FOOTER-->
 
-		<script src="js/jquery.js"></script>
-		<script src="js/price-range.js"></script>
-		<script src="js/jquery.scrollUp.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/jquery.prettyPhoto.js"></script>
-		<script src="js/main.js"></script>
+
 	</body>
 </html>
+<script src="./vue/js/jquery.js"></script>
+<script src="./vue/js/jquery.prettyPhoto.js"></script>
+<script src="./vue/js/price-range.js"></script>
+<script src="./vue/js/jquery.scrollUp.min.js"></script>
+<script src="./vue/style/js/bootstrap.min.js"></script>
+<script src="./vue/js/jquery.prettyPhoto.js"></script>
+<script src="./vue/js/main.js"></script>
